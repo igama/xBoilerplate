@@ -42,6 +42,14 @@ Next, run the auto-deploy script that will create a skeleton xBoilerplate applic
 
 php vendor/centralway/xBoilerplate/deploy.php
 
+Finally, one modification needs to be done to the deployed index.php (public_html/index.php):
+Replace the line:
+ include('../autoload.php');
+ 
+with
+ include('../vendor/centralway/xBoilerplate/autoload.php');
+
+
 2) Direct check-out (not recommended)
 
 You can, if you wish, simply download the xBoilerplate zip file and run vagrant from within there, however you will not
