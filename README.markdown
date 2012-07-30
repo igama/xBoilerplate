@@ -36,18 +36,20 @@ will be the root of your project. Then create a file called composer.json and in
 
 Within the directory you created, run the following command to cause Composer to obtain the dependencies (xBoilerplate):
 
-php composer.phar install
+    php composer.phar install
 
 Next, run the auto-deploy script that will create a skeleton xBoilerplate application:
 
-php vendor/centralway/xBoilerplate/deploy.php
+    php vendor/centralway/xBoilerplate/deploy.php
 
 Finally, one modification needs to be done to the deployed index.php (public_html/index.php):
 Replace the line:
- include('../autoload.php');
+
+    include('../autoload.php');
  
 with
- include('../vendor/centralway/xBoilerplate/autoload.php');
+
+    include('../vendor/centralway/xBoilerplate/autoload.php');
 
 
 2) Direct check-out (not recommended)
