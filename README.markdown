@@ -21,18 +21,18 @@ To get you started as fast as possible, xBoilerplate uses Vagrant so be sure to
 Composed package. Download [composer.phar](http://getcomposer.org/composer.phar) and put it into the directory that
 will be the root of your project. Then create a file called composer.json and insert the following:
 
-{
-    "name": "COMPANY/APPLICATION",
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/centralway/xBoilerplate"
-        }
-    ],
-    "require": {
-        "centralway/xBoilerplate": ">=1.2"
-    }
-}
+	{
+	    "name": "COMPANY/APPLICATION",
+	    "repositories": [
+	        {
+	            "type": "vcs",
+	            "url": "https://github.com/centralway/xBoilerplate"
+	        }
+	    ],
+	    "require": {
+	        "centralway/xBoilerplate": ">=1.0.1"
+	    }
+	}
 
 Within the directory you created, run the following command to cause Composer to obtain the dependencies (xBoilerplate):
 
