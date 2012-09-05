@@ -48,6 +48,14 @@ class xBoilerplateTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('active',$xBoilerplate->getActive('/'.$xBoilerplate->_page) );
     }
 
+	/**
+	 * Test of getActive method, page is not active, '' should be returned
+	 */
+	public function testGetActivePageNotActive(){
+		$xBoilerplate = xBoilerplate::getInstance()->pagestart('/ajax/test');
+		$this->assertEquals('', $xBoilerplate->getActive('/contact/index'));
+	}
+
     public function testGetPath_NoVersion(){
         $xBoilerplate = xBoilerplate::getInstance()->pagestart('/');
         $xBoilerplate->getConfig()->version = '0';
@@ -129,8 +137,23 @@ class xBoilerplateTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($menu, $xBoilerplate->loadMenu('test'));
     }
 
+	/**
+	 * Test of pageStart method, success, page starts
+	 */
+	public function testPageStart() {
+		$xBoilerplate = xBoilerplate::getInstance()->pagestart('/contact/index');
+		$this->assertEquals('contact/index', $xBoilerplate->_page);
+	}
 
-
+	/**
+	 * Test that exception is thrown when page is started twice
+	 *
+	 * @expectedException RuntimeException
+	 */
+	public function testPageStartTwice() {
+		xBoilerplate::getInstance()->pagestart('/contact/index');
+		xBoilerplate::getInstance()->pagestart('/contact/index');
+	}
 }
 
 /**
