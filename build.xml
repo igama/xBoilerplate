@@ -2,7 +2,7 @@
 
 <project name="xBoilerplate" default="build">
  <target name="build"
-   depends="prepare,lint,phploc,pdepend,phpmd-ci,phpcs-ci,phpcpd,phpunit,phpdoc, phpcb,sonar"/>
+   depends="prepare,lint,phploc,pdepend,phpmd-ci,phpcs-ci,phpcpd,phpunit,phpdoc, phpcb"/>
 
  <target name="local" depends="clean, prepare, lint, phploc, pdepend, phpmd, phpcs, phpcpd, phpdoc" />
 
